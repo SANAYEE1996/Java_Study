@@ -39,11 +39,13 @@ public class Overriding {
 		List<Object> head = new ArrayList<>();
 		Object[] b = {"b"};
 		Object[] ab = new Object[2];
+		Object[] de = {"d","e"};
 		ab[0] = "a";
 		ab[1] = b;
 		head.add(ab);
 		List<Object> input = new ArrayList<>(head);
 		input.add("c");
+		input.add(de);
 		System.out.println(input);
 		System.out.println(convert(input));
 		
