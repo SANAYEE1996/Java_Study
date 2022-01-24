@@ -9,7 +9,7 @@ public class Convert {
 			a = i.getClass().getTypeName().toString().substring(10);
 			if(a.equals("String")) {
 				output.add(i.toString());
-			}
+			} 
 			else {
 				gogo(output, (Object[]) i);
 			}
