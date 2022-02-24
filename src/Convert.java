@@ -12,7 +12,7 @@ public class Convert {
 			} 
 			else {
 				gogo(output, (Object[]) i);
-			}
+			} 
 		}
 		return output;
 	}
