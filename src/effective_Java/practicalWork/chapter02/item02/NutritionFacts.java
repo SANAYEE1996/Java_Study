@@ -6,7 +6,7 @@ public class NutritionFacts {
 	private final int calories;
 	private final int fat;
 	private final int sodium;
-	private final int carbohydrate;
+	private final int carbohydrate; 
 	
 	public static class Builder{
 		private final int servingSize;
