@@ -1,5 +1,7 @@
 package nextStep.chapter03;
 
-public class LogPractice {
 
+
+public class LogPractice {
+	
 }
