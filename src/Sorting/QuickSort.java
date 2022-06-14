@@ -24,7 +24,7 @@ public class QuickSort {
 		l_pivot_sort(a, lo, pivot - 1);
 		l_pivot_sort(a, pivot + 1, hi);
 		
-		
+		  
 		
 	}
 	
@@ -56,7 +56,7 @@ public class QuickSort {
 		swap(a, left, lo);
 		
 		return lo;
-	}
+	}  
  
 	private static void swap(int[] a, int i, int j) {
 		int temp = a[i];
