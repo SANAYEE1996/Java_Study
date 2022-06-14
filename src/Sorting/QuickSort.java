@@ -23,6 +23,9 @@ public class QuickSort {
 		
 		l_pivot_sort(a, lo, pivot - 1);
 		l_pivot_sort(a, pivot + 1, hi);
+		
+		
+		
 	}
 	
 	
