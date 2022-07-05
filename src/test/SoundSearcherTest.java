@@ -51,9 +51,8 @@ class SoundSearcherTest {
 	void timeOutTest() throws FileNotFoundException {
 		InputStream in = new FileInputStream(new File("./src/test/longText.txt"));
 		InputStreamReader reader = new InputStreamReader(in);
-		BufferedReader br = new BufferedReader(reader);
 		String line = "";
-		try {
+		try(BufferedReader br = new BufferedReader(reader)) {
 			line = br.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
