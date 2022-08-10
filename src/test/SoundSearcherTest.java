@@ -29,7 +29,8 @@ class SoundSearcherTest {
 	
 	@Test
 	void test() {
-		assertEquals(true, soundsearcher.isMatch("", ""));
+		assertEquals(true, soundsearcher.isMatch("ㅇㅇ", ""));
+		assertEquals(false, soundsearcher.isMatch("ㅇ", "12fs"));
 		assertEquals(true, soundsearcher.isMatch("손흥민", "ㅅㅎㅁ"));
 		assertEquals(true, soundsearcher.isMatch("손흥민", "ㅅ흥민"));
 		assertEquals(true, soundsearcher.isMatch("흥민이형", "ㅎㅁ"));
