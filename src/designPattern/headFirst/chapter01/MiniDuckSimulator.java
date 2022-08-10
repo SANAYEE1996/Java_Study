@@ -6,6 +6,11 @@ public class MiniDuckSimulator {
 		Duck eider = new EiderDuck();
 		eider.performFly();
 		eider.performQuack();
+		
+		Duck modelDuck = new ModelDuck();
+		modelDuck.performFly();
+		modelDuck.setFlyBehavior(new FlyWithRocket());
+		modelDuck.performFly();
 	}
 	
 
