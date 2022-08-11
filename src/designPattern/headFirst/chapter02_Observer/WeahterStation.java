@@ -14,6 +14,6 @@ public class WeahterStation {
 		
 		weatherData.setMeasurements(96, 70, 29.2f);
 		currentDisplay.display();
-		statisticsDisplay.display();
+		statisticsDisplay.display();  
 	}
 }
