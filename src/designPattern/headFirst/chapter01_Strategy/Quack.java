@@ -1,4 +1,4 @@
-package designPattern.headFirst.chapter01;
+package designPattern.headFirst.chapter01_Strategy;
 
 public class Quack implements QuackBehavior{
 	public void quack() {
