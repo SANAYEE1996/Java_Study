@@ -48,12 +48,36 @@ public class NutritionFacts {
 		
 	}
 	
-	private NutritionFacts(Builder builder) {
+	public NutritionFacts(Builder builder) {
 		servingSize = builder.servingSize;
 		servings = builder.servings;
 		calories = builder.calories;
 		fat = builder.fat;
 		sodium = builder.sodium;
 		carbohydrate = builder.carbohydrate;
+	}
+
+	public int getServingSize() {
+		return servingSize;
+	}
+
+	public int getServings() {
+		return servings;
+	}
+
+	public int getCalories() {
+		return calories;
+	}
+
+	public int getFat() {
+		return fat;
+	}
+
+	public int getSodium() {
+		return sodium;
+	}
+
+	public int getCarbohydrate() {
+		return carbohydrate;
 	}
 }
