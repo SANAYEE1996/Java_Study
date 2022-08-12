@@ -1,5 +1,7 @@
 package designPattern.headFirst.chapter03_Decorator;
 
+import designPattern.headFirst.chapter03_Decorator.Beverage.Size;
+
 public class CoffeeSimulator {
 
 	public static void main(String[] args) {
@@ -13,6 +15,10 @@ public class CoffeeSimulator {
 		orderSecondCoffee = new Whip(orderSecondCoffee);
 		System.out.println("두 번째 커피 설명 : "+orderSecondCoffee.getDescription()+" , 가격 : "+orderSecondCoffee.cost());
 		
+		Beverage thirdCoffee = new Americano();
+		thirdCoffee = new Hazelnut(thirdCoffee, Size.TALL);
+		thirdCoffee = new Whip(thirdCoffee, Size.GRANDE);
+		System.out.println("세 번째 커피 설명 : "+thirdCoffee.getDescription()+" , 가격 : "+thirdCoffee.cost());
 	}
 
 }
