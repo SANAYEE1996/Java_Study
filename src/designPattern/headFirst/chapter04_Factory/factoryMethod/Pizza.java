@@ -1,4 +1,4 @@
-package designPattern.headFirst.chapter04_Factory;
+package designPattern.headFirst.chapter04_Factory.factoryMethod;
 
 import java.util.ArrayList;
 import java.util.List;

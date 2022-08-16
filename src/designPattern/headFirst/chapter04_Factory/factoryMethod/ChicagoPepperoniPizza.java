@@ -1,8 +1,8 @@
-package designPattern.headFirst.chapter04_Factory;
+package designPattern.headFirst.chapter04_Factory.factoryMethod;
 
-public class ChicagoExtraPizza extends Pizza{
-	public ChicagoExtraPizza() {
-		name = "시카고 스타일 엑스트라 피자";
+public class ChicagoPepperoniPizza extends Pizza{
+	public ChicagoPepperoniPizza() {
+		name = "시카고 스타일 페퍼로니 피자";
 		dough = "아주 두꺼운 크러스트 도우";
 		sauce = "엑스터시 소스";
 		

@@ -1,4 +1,4 @@
-package designPattern.headFirst.chapter04_Factory;
+package designPattern.headFirst.chapter04_Factory.abstractFactory;
 
 public abstract class PizzaStore {
 	
