@@ -1,6 +1,7 @@
 package nextStep.reflectionPractice;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
 public class ReflectionSimulator {
 
@@ -39,6 +40,21 @@ public class ReflectionSimulator {
 			}
 			/*
 			 * 모든 public 생성자를 가져오는 getConstructors
+			 * 
+			 * */
+			Method method = personClass.getDeclaredMethod("getAge", null);
+			System.out.println("\nperson 객체의 getAge 메서드: "+method);
+			/*
+			 * 인자가 없는 메서드라면 null을 전달하면 된다.
+			 * 
+			 * */
+			Class<?> paramArray[] = new Class[2];
+			paramArray[0] = int.class;
+			paramArray[1] = String.class;
+			method = personClass.getDeclaredMethod("print", paramArray);
+			System.out.println("메서드에 여러 인자가 전달 될때 : "+method);
+			/*
+			 * 인자가 여러개라면 클래스 배열을 만들어 전달합니다.
 			 * 
 			 * */
 		} catch (NoSuchMethodException | SecurityException | ClassNotFoundException e) {
