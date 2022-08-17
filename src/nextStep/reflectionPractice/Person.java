@@ -25,4 +25,8 @@ public class Person {
 	public String getString() {
 		return name;
 	}
+	
+	public void print(int age, String name) {
+		System.out.println("나이 : " +age +" ,이름 : "+name);
+	}
 }
