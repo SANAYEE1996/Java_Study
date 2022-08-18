@@ -1,8 +1,8 @@
 package nextStep.reflectionPractice;
 
 public class Person {
-	int age;
-	String name;
+	public int age;
+	private String name;
 	
 	public Person() {
 		this.age = 0;
