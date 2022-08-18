@@ -10,10 +10,12 @@ public class CodeFormatRules {
 	private String[] records;
 	private int[] fees;
 	
-	
-	public int[] solution(int[] feesFrom, String[] recordsFrom) {
+	public CodeFormatRules() {
 		this.map = new HashMap<>();
 		this.cal = new HashMap<>();
+	}
+	
+	public int[] solution(int[] feesFrom, String[] recordsFrom) {
 		this.records = recordsFrom;
 		this.fees = feesFrom;
 		putRecords();
