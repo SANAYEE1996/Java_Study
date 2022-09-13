@@ -6,7 +6,6 @@
 
 * 등록된 ServletContextListener의 콜백 메서드가 호출된다. 이 무제에서는 ContextLoaderListener의 contextInitialized() 메서드가 호출된다.
 
-* jwp.sql 파일에서 SQL 문을 실행해 데이터 베이스 테이블을 초기화한다.
 
 * 서블릿 컨테이너는 클라이언트로부터의 최초 요청시 (또는 컨테이너에 서블릿 인스턴스를 생성하도록 미리 설정을 한다면 최초 요청 전에) 
   DispatcherServletStartup 인스턴스를 생성한다.(생성자 호출)
