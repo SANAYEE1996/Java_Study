@@ -15,7 +15,7 @@
 * DispatchServlet 인스턴스의 init() 메서드를 호출해 초기화 작업을 진행한다.
 
 * init() 메서드 안에서 RequestMapping 객체를 생성한다.
-
+ 
 * RequestMapping 인스턴스의 initMapping() 메서드를 호출한다. initMapping() 메서드에서는 요청 URL 과 Controller 인스턴스를 매핑시킨다.
 
 #### 2. Tomcat 서버를 시작한 후 http://localhost:8080으로 접근시 호출 순서 및 흐름을 설명하라.
