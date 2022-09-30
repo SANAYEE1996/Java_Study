@@ -6,12 +6,10 @@ import java.util.ArrayList;
 public class FindSameTagCss {
 	
 	void readCssLine(BufferedReader br, ArrayList<String> tagList) throws IOException {
-		int count = 0;
         int index = 0;
         String beforeLine;
         while(true) {
             String line = br.readLine();
-            count++;
             if (line==null) break;  // 더 이상 읽을 라인이 없을 경우 while 문을 빠져나간다.
             index = line.length();
             beforeLine = line;
@@ -22,7 +20,6 @@ public class FindSameTagCss {
             	index = line.indexOf("{");
             	if(!line.contains("}")) {
             		while(true) {
-            			count++;
 	            		line = br.readLine();
 	            		if(line.contains("}")) {
 	            			break;
