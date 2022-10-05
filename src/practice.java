@@ -1,10 +1,14 @@
-import java.util.ResourceBundle;
 
 
 public class practice {
     public static void main(String[] args) {
-    	ResourceBundle box = ResourceBundle.getBundle("locale_korean");
+    	System.out.println(System.identityHashCode(new String("string")));
+    	System.out.println(System.identityHashCode(new String("string")));
     	
+    	People p = new People();
+    	System.out.println(System.identityHashCode(p));
+    	System.out.println(System.identityHashCode(p.age(1)));
+    	System.out.println(System.identityHashCode(new People().age(1)));
     	
     }
 }
