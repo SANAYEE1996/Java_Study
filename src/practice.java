@@ -7,8 +7,8 @@ public class practice {
     	
     	People p = new People();
     	System.out.println(System.identityHashCode(p));
-    	System.out.println(System.identityHashCode(p.age(1)));
-    	System.out.println(System.identityHashCode(new People().age(1)));
+    	System.out.println(System.identityHashCode(p.age(47)));
+    	System.out.println(System.identityHashCode(new People().age(47)));
     	
     }
 }
