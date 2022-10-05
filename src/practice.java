@@ -9,6 +9,7 @@ public class practice {
     	System.out.println(System.identityHashCode(p));
     	System.out.println(System.identityHashCode(p.age(47)));
     	System.out.println(System.identityHashCode(new People().age(47)));
+    	System.out.println(p.age(47) == new People().age(47));
     	
     }
 }
