@@ -31,6 +31,7 @@ public class FindSameTagCss {
             if(beforeLine.equals("")) {
             	continue;
             }
+            System.out.println(beforeLine);
             tagList.add(beforeLine);
         }
         
@@ -42,23 +43,23 @@ public class FindSameTagCss {
 	
 	public static void main(String[] args) throws IOException {
         
-        BufferedReader classBr = new BufferedReader(new FileReader("C:/Users/imaxsoft-16/Desktop/classCss.txt"));
-        BufferedReader adminBr = new BufferedReader(new FileReader("C:/Users/imaxsoft-16/Desktop/adminCss.txt"));
+        BufferedReader classBr = new BufferedReader(new FileReader("C:/Users/imaxsoft1-PC/Desktop/textMemo/exam.txt"));
+        //BufferedReader adminBr = new BufferedReader(new FileReader("C:/Users/imaxsoft-16/Desktop/adminCss.txt"));
         FindSameTagCss s = new FindSameTagCss();
         ArrayList<String> classTagList = new ArrayList<>();
-        ArrayList<String> adminTagList = new ArrayList<>();
+        //ArrayList<String> adminTagList = new ArrayList<>();
         s.readCssLine(classBr,classTagList);
-        s.readCssLine(adminBr,adminTagList);
+        //s.readCssLine(adminBr,adminTagList);
         
-        ArrayList<String> duplicateList = new ArrayList<>();
-        for(String str : classTagList) {
-        	if(adminTagList.contains(str) && !duplicateList.contains(str)) {
-        		duplicateList.add(str);
-        	}
-        }
-        for(String str : duplicateList) {
-        	System.out.println(str);
-        }
+//        ArrayList<String> duplicateList = new ArrayList<>();
+//        for(String str : classTagList) {
+//        	if(adminTagList.contains(str) && !duplicateList.contains(str)) {
+//        		duplicateList.add(str);
+//        	}
+//        }
+//        for(String str : duplicateList) {
+//        	System.out.println(str);
+//        }
         
         
 	}
