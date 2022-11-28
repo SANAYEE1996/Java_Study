@@ -4,7 +4,7 @@ public class PureProxyClient {
 	
 	public void run(String name) {
 		TargetObjectProxy proxy = new TargetObjectProxy();
-		System.out.println(proxy.someMethod(name));
+		proxy.someMethod(name);
 	}
 	
 	public static void main(String[] args) {

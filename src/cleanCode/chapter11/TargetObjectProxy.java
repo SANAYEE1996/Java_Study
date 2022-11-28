@@ -8,8 +8,9 @@ public class TargetObjectProxy implements TargetObject{
 	}
 	
 	@Override
-	public String someMethod(String name) {
+	public void someMethod(String name) {
 		System.out.println("Before Proxy \n");
-		return subject.someMethod(name) + "After Proxy\n";
+		System.out.println("After Proxy : ");
+		subject.someMethod(name);
 	}
 }
