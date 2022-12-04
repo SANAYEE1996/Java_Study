@@ -1,3 +1,11 @@
 Dynamic Proxy
 
 런타임에 특정 인터페이스들을 구현하는 클래스나 인스턴스를 만드는 기술을 말한다.
+
+
+CGLIB Library를 통한 Dynamic Proxy 구현 방식
+ 
+
+CGLIB Dynamic Proxy (Spring, Hibernate - embed Library)?
+
+코드 생성 라이브러리(Code Generator Library), 런타임에 동적으로 자바 클래스의 프록시를 생성해주는 기능을 제공한다.
