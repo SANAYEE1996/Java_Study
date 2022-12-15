@@ -18,9 +18,9 @@ import com.google.gson.Gson;
 public class Example {
 	static public void main ( String[] args ) {
         String openApiURL = "http://aiopen.etri.re.kr:8000/WiseASR/Recognition";
-        String accessKey = "YOUR_ACCESS_KEY";    // 발급받은 API Key
-        String languageCode = "LANGUAGE_CODE";     // 언어 코드
-        String audioFilePath = "AUDIO_FILE_PATH";  // 녹음된 음성 파일 경로
+        String accessKey = "ceb2aee7-a333-4f64-9682-ee86fda1a19b";    // 발급받은 API Key
+        String languageCode = "korean";     // 언어 코드
+        String audioFilePath = "C:/Users/imaxsoft-21/Desktop/small.wav";  // 녹음된 음성 파일 경로
         String audioContents = null;
  
         Gson gson = new Gson();
@@ -51,12 +51,12 @@ public class Example {
             con.setDoOutput(true);
             con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
             con.setRequestProperty("Authorization", accessKey);
- 
+            
             DataOutputStream wr = new DataOutputStream(con.getOutputStream());
             wr.write(gson.toJson(request).getBytes("UTF-8"));
             wr.flush();
             wr.close();
- 
+            System.out.println("under Code Do Not Work ..zzz");
             responseCode = con.getResponseCode();
             InputStream is = con.getInputStream();
             byte[] buffer = new byte[is.available()];
@@ -66,6 +66,13 @@ public class Example {
             System.out.println("[responseCode] " + responseCode);
             System.out.println("[responBody]");
             System.out.println(responBody);
+            String[] bodyArray = responBody.split(","); 
+            String[] bodyContentArray;
+            for(int i = 0; i < bodyArray.length; i++) {
+            	bodyContentArray = bodyArray[i].split(":");
+//            	System.out.println(bodyContentArray[0] + " " +bodyContentArray[1]);
+            	System.out.println(bodyArray[i]);
+            }
  
         } catch (MalformedURLException e) {
             e.printStackTrace();
