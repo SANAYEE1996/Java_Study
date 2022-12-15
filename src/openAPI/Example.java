@@ -18,9 +18,9 @@ import com.google.gson.Gson;
 public class Example {
 	static public void main ( String[] args ) {
         String openApiURL = "http://aiopen.etri.re.kr:8000/WiseASR/Recognition";
-        String accessKey = "ceb2aee7-a333-4f64-9682-ee86fda1a19b";    // 발급받은 API Key
+        String accessKey = "blind";    // 발급받은 API Key
         String languageCode = "korean";     // 언어 코드
-        String audioFilePath = "C:/Users/imaxsoft-21/Desktop/small.wav";  // 녹음된 음성 파일 경로
+        String audioFilePath = "path";  // 녹음된 음성 파일 경로
         String audioContents = null;
  
         Gson gson = new Gson();
