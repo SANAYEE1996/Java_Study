@@ -30,7 +30,6 @@ public class SpeechToText {
 			System.out.println(e.getMessage());
 		}
 		accessKey = properties.getProperty("api_key");
-		System.out.println("accessKey : " +accessKey);
 	}
 	
 	public void printSpeech(String languageCode, String audioFilePath) {
@@ -68,16 +67,19 @@ public class SpeechToText {
             wr.write(gson.toJson(request).getBytes("UTF-8"));
             wr.flush();
             wr.close();
-            System.out.println("under Code Do Not Work ..zzz");
+            
             responseCode = con.getResponseCode();
             InputStream is = con.getInputStream();
             byte[] buffer = new byte[is.available()];
+            int byteRead = is.read(buffer);
             responBody = new String(buffer);
  
             System.out.println("[responseCode] " + responseCode);
             System.out.println("[responBody]");
-            System.out.println(responBody);
- 
+            System.out.println("읽은 byte read count : " + byteRead);
+            int objectIndex = responBody.indexOf("recognized");
+            String value = responBody.substring(objectIndex+13).replaceAll("\\}|\"", "");
+            System.out.println(value);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
