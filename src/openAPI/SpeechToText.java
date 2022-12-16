@@ -1,6 +1,7 @@
 package openAPI;
 
 import java.io.DataOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -12,17 +13,29 @@ import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import com.google.gson.Gson;
 
-public class Example {
-	static public void main ( String[] args ) {
-        String openApiURL = "http://aiopen.etri.re.kr:8000/WiseASR/Recognition";
-        String accessKey = "blind";    // 발급받은 API Key
-        String languageCode = "korean";     // 언어 코드
-        String audioFilePath = "path";  // 녹음된 음성 파일 경로
-        String audioContents = null;
- 
+public class SpeechToText {
+	
+	private final String openApiURL = "http://aiopen.etri.re.kr:8000/WiseASR/Recognition";
+	private String accessKey;    // 발급받은 API Key
+	
+	public SpeechToText(String path) {
+		Properties properties = new Properties();
+		try {
+			properties.load(new FileInputStream(path));
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+		accessKey = properties.getProperty("api_key");
+		System.out.println("accessKey : " +accessKey);
+	}
+	
+	public void printSpeech(String languageCode, String audioFilePath) {
+		String audioContents = null;
+		 
         Gson gson = new Gson();
  
         Map<String, Object> request = new HashMap<>();
@@ -35,7 +48,6 @@ public class Example {
         } catch (IOException e) {
             e.printStackTrace();
         }
- 
         argument.put("language_code", languageCode);
         argument.put("audio", audioContents);
  
@@ -60,24 +72,17 @@ public class Example {
             responseCode = con.getResponseCode();
             InputStream is = con.getInputStream();
             byte[] buffer = new byte[is.available()];
-            int byteRead = is.read(buffer);
             responBody = new String(buffer);
  
             System.out.println("[responseCode] " + responseCode);
             System.out.println("[responBody]");
             System.out.println(responBody);
-            String[] bodyArray = responBody.split(","); 
-            String[] bodyContentArray;
-            for(int i = 0; i < bodyArray.length; i++) {
-            	bodyContentArray = bodyArray[i].split(":");
-//            	System.out.println(bodyContentArray[0] + " " +bodyContentArray[1]);
-            	System.out.println(bodyArray[i]);
-            }
  
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+	}
+	
 }
