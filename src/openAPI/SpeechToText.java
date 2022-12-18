@@ -20,7 +20,7 @@ import com.google.gson.Gson;
 public class SpeechToText {
 	
 	private final String openApiURL = "http://aiopen.etri.re.kr:8000/WiseASR/Recognition";
-	private String accessKey;    // 발급받은 API Key
+	private String accessKey;
 	private String languageCode;
 	private String audioFilePath;
 	private Integer responseCode = null;
@@ -34,7 +34,7 @@ public class SpeechToText {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-		this.accessKey = properties.getProperty("api_key");
+		this.accessKey = properties.getProperty("api_key");	// 발급받은 API Key
 	}
 	
 	public String getText(String languageCode, String audioFilePath) {
