@@ -11,7 +11,7 @@ class SpeechToTextTest {
 	
 	@BeforeEach
 	public void setup() {
-		stt = new SpeechToText("C:/Users/imaxsoft-21/git/Java_Study/src/openAPI/setting.properties");
+		stt = new SpeechToText("");
 	}
 	
 	@Test
@@ -20,27 +20,27 @@ class SpeechToTextTest {
 		long endTime;
 		
 		startTime = System.nanoTime();
-		System.out.println(stt.getText("korean", "C:/Users/imaxsoft-21/Desktop/audio/10scs.wav"));
+		System.out.println(stt.getText("korean", ""));
 		endTime = System.nanoTime();
 		System.out.println("걸린 시간 : " +(endTime - startTime) / 1000000000.0 +" sec\n");
 		
 		startTime = System.nanoTime();
-		System.out.println(stt.getText("korean", "C:/Users/imaxsoft-21/Desktop/audio/20scs.wav"));
+		System.out.println(stt.getText("korean", ""));
 		endTime = System.nanoTime();
 		System.out.println("걸린 시간 : " +(endTime - startTime) / 1000000000.0 +" sec\n");
 		
 		startTime = System.nanoTime();
-		System.out.println(stt.getText("korean", "C:/Users/imaxsoft-21/Desktop/audio/20scs_01.wav"));
+		System.out.println(stt.getText("korean", ""));
 		endTime = System.nanoTime();
 		System.out.println("걸린 시간 : " +(endTime - startTime) / 1000000000.0 +" sec\n");
 		
 		startTime = System.nanoTime();
-		System.out.println(stt.getText("korean", "C:/Users/imaxsoft-21/Desktop/audio/20scs_fast.wav"));
+		System.out.println(stt.getText("korean", ""));
 		endTime = System.nanoTime();
 		System.out.println("걸린 시간 : " +(endTime - startTime) / 1000000000.0 +" sec\n");
 		
 		startTime = System.nanoTime();
-		System.out.println(stt.getText("korean", "C:/Users/imaxsoft-21/Desktop/audio/31scs.wav"));
+		System.out.println(stt.getText("korean", ""));
 		endTime = System.nanoTime();
 		System.out.println("걸린 시간 : " +(endTime - startTime) / 1000000000.0 +" sec\n");
 	}
