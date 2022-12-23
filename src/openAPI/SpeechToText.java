@@ -69,7 +69,6 @@ public class SpeechToText {
 	}
 	
 	private void requestAPI(Map<String, Object> request) {
-		Gson gson = new Gson();
 		URL url;
 		responseCode = null;
         responBody = null;
@@ -81,21 +80,27 @@ public class SpeechToText {
             con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
             con.setRequestProperty("Authorization", accessKey);
             
-            DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-            wr.write(gson.toJson(request).getBytes("UTF-8"));
-            wr.flush();
-            wr.close();
-            
-            responseCode = con.getResponseCode();
-            InputStream is = con.getInputStream();
-            byte[] buffer = new byte[is.available()];
-            is.read(buffer);
-            responBody = new String(buffer);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+            readAnswerBody(con, request);
         } catch (IOException e) {
             e.printStackTrace();
         }
+	}
+	
+	private void readAnswerBody(HttpURLConnection con, Map<String, Object> request) {
+		Gson gson = new Gson();
+		try(DataOutputStream wr = new DataOutputStream(con.getOutputStream());) {
+			wr.write(gson.toJson(request).getBytes("UTF-8"));
+	        wr.flush();
+	        wr.close();
+	        
+	        responseCode = con.getResponseCode();
+	        InputStream is = con.getInputStream();
+	        byte[] buffer = new byte[is.available()];
+	        is.read(buffer);
+	        responBody = new String(buffer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }
