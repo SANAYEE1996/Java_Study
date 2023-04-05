@@ -13,24 +13,26 @@ public class FindSameTagCss {
         while(true) {
             line = br.readLine();
             if (line==null) break;  // 더 이상 읽을 라인이 없을 경우 while 문을 빠져나간다.
-            index = line.indexOf("https");
+            index = line.indexOf("//");
             if(index > 0) {
             	line = line.substring(index);
             	index = line.indexOf(")");
             	line = line.substring(0,index);
+            	System.out.println("https:"+line);
             	tagList.add(line);
             	set.add(line);
             }
         }
         
         br.close();
+        System.out.println(set.size() == tagList.size());
 	}
 	
 	
 	
 	public static void main(String[] args) throws IOException {
         
-        BufferedReader classBr = new BufferedReader(new FileReader("C:/Users/imaxsoft-21/Desktop/Nanumsgothic.txt"));
+        BufferedReader classBr = new BufferedReader(new FileReader("C:/Users/imaxsoft-21/Desktop/NotoSansKR.txt"));
         //BufferedReader adminBr = new BufferedReader(new FileReader("C:/Users/imaxsoft-16/Desktop/adminCss.txt"));
         FindSameTagCss s = new FindSameTagCss();
         ArrayList<String> classTagList = new ArrayList<>();
