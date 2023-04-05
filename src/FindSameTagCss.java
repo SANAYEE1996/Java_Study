@@ -2,48 +2,35 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class FindSameTagCss {
 	
 	void readCssLine(BufferedReader br, ArrayList<String> tagList) throws IOException {
+        String line;
         int index = 0;
-        String beforeLine;
+        HashSet<String> set = new HashSet<>();
         while(true) {
-            String line = br.readLine();
+            line = br.readLine();
             if (line==null) break;  // 더 이상 읽을 라인이 없을 경우 while 문을 빠져나간다.
-            index = line.length();
-            beforeLine = line;
-            if(line.contains("@")) {
-            	continue;
+            index = line.indexOf("https");
+            if(index > 0) {
+            	line = line.substring(index);
+            	index = line.indexOf(")");
+            	line = line.substring(0,index);
+            	tagList.add(line);
+            	set.add(line);
             }
-            if(line.contains("{") && !line.contains("@")) {
-            	index = line.indexOf("{");
-            	if(!line.contains("}")) {
-            		while(true) {
-	            		line = br.readLine();
-	            		if(line.contains("}")) {
-	            			break;
-	            		}
-	            	}
-            	}
-            }
-            beforeLine = beforeLine.substring(0, index).replaceAll("}", "").trim().replaceAll(",", "");
-            if(beforeLine.equals("")) {
-            	continue;
-            }
-            System.out.println(beforeLine);
-            tagList.add(beforeLine);
         }
         
         br.close();
-        System.out.println("태그 수 : " +tagList.size());
 	}
 	
 	
 	
 	public static void main(String[] args) throws IOException {
         
-        BufferedReader classBr = new BufferedReader(new FileReader("C:/Users/imaxsoft1-PC/Desktop/textMemo/exam.txt"));
+        BufferedReader classBr = new BufferedReader(new FileReader("C:/Users/imaxsoft-21/Desktop/Nanumsgothic.txt"));
         //BufferedReader adminBr = new BufferedReader(new FileReader("C:/Users/imaxsoft-16/Desktop/adminCss.txt"));
         FindSameTagCss s = new FindSameTagCss();
         ArrayList<String> classTagList = new ArrayList<>();
