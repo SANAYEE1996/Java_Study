@@ -1,4 +1,4 @@
-package sorting;
+package algorithm;
 
 public class QuickSort {
 	public static void sort(int[] a) {

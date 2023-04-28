@@ -1,4 +1,4 @@
-package sorting;
+package algorithm;
 
 public class TimSort {
 
