@@ -20,5 +20,20 @@ class LCSTest {
 	void test() {
 		assertEquals("ars",lcs.gogo("tars", "arts"));
 	}
+	
+	@Test
+	void test02() {
+		assertEquals("etion",lcs.gogo("intention", "execution"));
+	}
+	
+	@Test
+	void test03() {
+		assertEquals("intton",lcs.gogo("intentionplease", "executionbutton"));
+	}
+	
+	@Test
+	void test04() {
+		assertEquals("ee",lcs.gogo("eniplease", "executobu"));
+	}
 
 }
