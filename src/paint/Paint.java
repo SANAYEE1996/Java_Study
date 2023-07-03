@@ -1,5 +1,12 @@
 package paint;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import util.Order;
+import util.ResponseDto;
+import util.Status;
+
 public class Paint {
 
 	public static void main(String[] args) {
@@ -14,6 +21,23 @@ public class Paint {
 		System.out.println("num : "+num);
 		System.out.println("plus : "+plus);
 		System.out.println("index : "+index);
+		
+		Order order = new Order(4L, "노트북", 490_000, "2023-06-23");
+		
+		List<Order> orderList = new ArrayList<>();
+		orderList.add(new Order(1L, "종이컵", 100, "2023-05-17"));
+		orderList.add(new Order(2L, "마우스", 5000, "2023-06-04"));
+		orderList.add(new Order(3L, "키보드", 13000, "2023-07-01"));
+		
+		ResponseDto<Order> response = new ResponseDto<>(Status.OK.code(), Status.OK.message(), order);
+		ResponseDto<List<Order>> responseList = new ResponseDto<>(Status.ERROR.code(), Status.ERROR.message(), orderList);
+		
+		System.out.println("response : " +response.getData().toString());
+		System.out.println("resopnse code : " +response.getCode() + " response message : "+response.getMessage());
+		System.out.println("responseList : " +responseList.getData().get(0).toString());
+		System.out.println("responseList : " +responseList.getData().get(1).toString());
+		System.out.println("responseList : " +responseList.getData().get(2).toString());
+		System.out.println("responseList code : " +responseList.getCode() + " responseList message : "+responseList.getMessage());
 	}
 
 }

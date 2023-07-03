@@ -142,7 +142,6 @@ class IntMergeStack {
     
 	public IntMergeStack(int[] a) {
 		this.array = a;
-		int len = a.length;
 
 	
 		runBase = new int[40];
