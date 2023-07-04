@@ -4,8 +4,8 @@ public enum Status {
 	OK("200", "OK"),
 	ERROR("404", "ERROR");
 	
-	private String code;
-	private String message;
+	private final String code;
+	private final String message;
 	
 	private Status(String code, String message) {
 		this.code = code;

@@ -38,6 +38,10 @@ public class Paint {
 		System.out.println("responseList : " +responseList.getData().get(1).toString());
 		System.out.println("responseList : " +responseList.getData().get(2).toString());
 		System.out.println("responseList code : " +responseList.getCode() + " responseList message : "+responseList.getMessage());
+		
+		for(Status status : Status.values()) {
+			System.out.println("status code : " +status.code() + " and its message : " +status.message());
+		}
 	}
 
 }
