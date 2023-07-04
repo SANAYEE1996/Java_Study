@@ -2,11 +2,11 @@ package util;
 
 public class ResponseDto<T> {
 	
-	private String code;
+	private final String code;
 	
-	private String message;
+	private final String message;
 	
-	private T data;
+	private final T data;
 
 	public String getCode() {
 		return code;
@@ -18,10 +18,6 @@ public class ResponseDto<T> {
 
 	public T getData() {
 		return data;
-	}
-	
-	public ResponseDto() {
-		
 	}
 	
 	public ResponseDto(String code, String message, T data){

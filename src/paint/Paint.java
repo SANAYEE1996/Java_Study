@@ -3,6 +3,8 @@ package paint;
 import java.util.ArrayList;
 import java.util.List;
 
+import effective_Java.chapter34.Operation;
+import effective_Java.chapter34.PayrollDay;
 import util.Order;
 import util.ResponseDto;
 import util.Status;
@@ -41,6 +43,15 @@ public class Paint {
 		
 		for(Status status : Status.values()) {
 			System.out.println("status code : " +status.code() + " and its message : " +status.message());
+		}
+		
+		double x = 100, y = 37;
+		for(Operation op : Operation.values()) {
+			System.out.printf("%f %s %f = %f\n",x,op,y,op.apply(x, y));
+		}
+		
+		for(PayrollDay pr : PayrollDay.values()) {
+			System.out.println(pr.pay(49, 7));
 		}
 	}
 
