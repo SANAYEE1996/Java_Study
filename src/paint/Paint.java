@@ -5,6 +5,7 @@ import java.util.List;
 
 import effective_Java.chapter34.Operation;
 import effective_Java.chapter34.PayrollDay;
+import effective_Java.chapter75.Member;
 import util.Order;
 import util.ResponseDto;
 import util.Status;
@@ -53,6 +54,8 @@ public class Paint {
 		for(PayrollDay pr : PayrollDay.values()) {
 			System.out.println(pr.pay(49, 7));
 		}
+		
+		Member member = Member.create("영상",27,"ys2023");
 	}
 
 }
