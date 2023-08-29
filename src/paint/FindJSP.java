@@ -55,7 +55,7 @@ public class FindJSP {
 			System.out.println(str);
 		}
 		System.out.println("\n\n\n\n==============================================================");
-		classBr = new BufferedReader(new FileReader("C:/Users/.../Desktop/textMemo/duplicate_check.txt"));
+		classBr = new BufferedReader(new FileReader("C:/Users/.../Desktop/textMemo/html_lang.txt"));
 		jspList = new ArrayList<>();
 		set = new HashSet<>();
 		s.deleteDuplicateString(classBr, jspList, set);
