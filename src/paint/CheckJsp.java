@@ -14,7 +14,7 @@ public class CheckJsp {
         while(true) {
             line = br.readLine();
             if (line==null) break;
-            if(checkContainsTableTag(new BufferedReader(new FileReader(header+line)))) {
+            if(checkContainsOnClick(new BufferedReader(new FileReader(header+line)))) {
             	System.out.println(line);
             }
         }
@@ -58,6 +58,32 @@ public class CheckJsp {
             line = br.readLine();
             if (line==null) break;
             if(line.contains("<table")) {
+            	return true;
+            }
+        }
+        br.close();
+        return false;
+	}
+	
+	private boolean checkContainsDialog(BufferedReader br) throws IOException{
+		String line;
+        while(true) {
+            line = br.readLine();
+            if (line==null) break;
+            if(line.contains(".dialog")) {
+            	return true;
+            }
+        }
+        br.close();
+        return false;
+	}
+	
+	private boolean checkContainsOnClick(BufferedReader br) throws IOException{
+		String line;
+        while(true) {
+            line = br.readLine();
+            if (line==null) break;
+            if(line.contains("onclick")) {
             	return true;
             }
         }
