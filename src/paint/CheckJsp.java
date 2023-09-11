@@ -9,12 +9,12 @@ import java.util.List;
 public class CheckJsp {
 	
 	private void scanAllJsp(BufferedReader br, List<String> list) throws IOException{
-		String header = "D:/.../.../.../webapp";
+		String header = "D:////webapp";
 		String line;
         while(true) {
             line = br.readLine();
             if (line==null) break;
-            if(checkContainsHtml(new BufferedReader(new FileReader(header+line)))) {
+            if(checkContainsTableTag(new BufferedReader(new FileReader(header+line)))) {
             	System.out.println(line);
             }
         }
@@ -51,11 +51,24 @@ public class CheckJsp {
         br.close();
         return isContain;
 	}
+	
+	private boolean checkContainsTableTag(BufferedReader br) throws IOException{
+		String line;
+        while(true) {
+            line = br.readLine();
+            if (line==null) break;
+            if(line.contains("<table")) {
+            	return true;
+            }
+        }
+        br.close();
+        return false;
+	}
 
 	public static void main(String[] args) throws IOException{
 		
 		CheckJsp s = new CheckJsp();
-		BufferedReader br = new BufferedReader(new FileReader("C:/Users/.../Desktop/textMemo/all_input_jsp.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("C:/Users//Desktop/textMemo/all_input_jsp.txt"));
 		List<String> list = new ArrayList<>();
 		s.scanAllJsp(br, list);
 	}
