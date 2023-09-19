@@ -14,8 +14,18 @@ public class CheckJsp {
         while(true) {
             line = br.readLine();
             if (line==null) break;
-            if(checkContainsKeyword(new BufferedReader(new FileReader(header+line)), "")) {
+            BufferedReader fileBr;
+            boolean isContains = false;
+            try {
+            	fileBr = new BufferedReader(new FileReader(header+line));
+            	isContains = checkContainsKeyword(fileBr, ".click");
+			} catch (IOException e) {
+				
+				continue;
+			}
+            if(isContains) {
             	System.out.println(line);
+//            	list.add(line);
             }
         }
         br.close();
@@ -68,8 +78,9 @@ public class CheckJsp {
 	public static void main(String[] args) throws IOException{
 		
 		CheckJsp s = new CheckJsp();
-		BufferedReader br = new BufferedReader(new FileReader("C:/Users//Desktop/textMemo/all_input_jsp.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("C:/Users//Desktop/textMemo/todo_jsp.txt"));
 		List<String> list = new ArrayList<>();
 		s.scanAllJsp(br, list);
+		
 	}
 }
