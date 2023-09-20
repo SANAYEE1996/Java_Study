@@ -11,6 +11,8 @@ public class CheckJsp {
 	private void scanAllJsp(BufferedReader br, List<String> list) throws IOException{
 		String header = "D:////webapp";
 		String line;
+		FindStringByWildCard s = new FindStringByWildCard();
+		String pattern = "*click*function";
         while(true) {
             line = br.readLine();
             if (line==null) break;
@@ -18,9 +20,8 @@ public class CheckJsp {
             boolean isContains = false;
             try {
             	fileBr = new BufferedReader(new FileReader(header+line));
-            	isContains = checkContainsKeyword(fileBr, ".click");
+            	isContains = findByPattern(fileBr, pattern, s);
 			} catch (IOException e) {
-				
 				continue;
 			}
             if(isContains) {
@@ -68,6 +69,19 @@ public class CheckJsp {
             line = br.readLine();
             if (line==null) break;
             if(line.contains(keyword)) {
+            	return true;
+            }
+        }
+        br.close();
+        return false;
+	}
+	
+	private boolean findByPattern(BufferedReader br, String pattern, FindStringByWildCard s) throws IOException{
+		String line;
+        while(true) {
+            line = br.readLine();
+            if (line==null) break;
+            if(s.isMatch(line, pattern)) {
             	return true;
             }
         }
