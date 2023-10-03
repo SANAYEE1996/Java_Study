@@ -12,7 +12,7 @@ public class CheckJsp {
 		String header = "D:////webapp";
 		String line;
 		FindStringByWildCard s = new FindStringByWildCard();
-		String pattern = "*click*function";
+		String pattern = "<iframe";
         while(true) {
             line = br.readLine();
             if (line==null) break;
@@ -20,7 +20,7 @@ public class CheckJsp {
             boolean isContains = false;
             try {
             	fileBr = new BufferedReader(new FileReader(header+line));
-            	isContains = findByPattern(fileBr, pattern, s);
+            	isContains = checkContainsKeyword(fileBr, pattern);
 			} catch (IOException e) {
 				continue;
 			}
