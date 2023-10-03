@@ -2,6 +2,7 @@ package cleanCode.chapter14;
 
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 public class ComparisonCompactor {
 	private static final String ELLIPSIS = "...";
 	  private static final String DELTA_END = "]";
